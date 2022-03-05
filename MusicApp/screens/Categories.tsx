@@ -1,12 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Text, View} from 'react-native';
 
 type Props = {};
 
 function Categories({}: Props) {
   return (
     <View>
-      <View></View>
+      <Text>categories</Text>
     </View>
   );
 }

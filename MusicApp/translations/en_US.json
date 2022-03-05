@@ -1,0 +1,10 @@
+{
+  "navigation": {
+    "Home": "Home",
+    "Categories": "Categories",
+    "CategoryExtended": "Categories Extended",
+    "DetailsScreen": "Song Details",
+    "Search": "Search"
+  },
+  "general": {}
+}
