@@ -4,9 +4,15 @@ import {NavigationContainer} from '@react-navigation/native';
 //
 import Routing from './Routing';
 import styles from './styles';
+import {useAppDispatch} from './store/hooks';
+import {setActiveRouteName} from './store/slices/appStateSlice';
+import {Provider} from 'react-redux';
+import {store} from './store';
+//
 const {general} = styles;
 
 const App = () => {
+  const dispatch = useAppDispatch();
   const containerRef = useRef<any>();
   const routeNameRef = useRef();
 
@@ -22,6 +28,7 @@ const App = () => {
         onStateChange={async () => {
           const currentRouteName = containerRef.current.getCurrentRoute().name;
           routeNameRef.current = currentRouteName;
+          dispatch(setActiveRouteName(currentRouteName));
         }}>
         <Routing />
       </NavigationContainer>
@@ -29,4 +36,12 @@ const App = () => {
   );
 };
 
-export default App;
+function StoreProvider() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}
+
+export default StoreProvider;
