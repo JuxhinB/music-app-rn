@@ -5,6 +5,6 @@ export const style = StyleSheet.create({
   container: {
     flex: 1,
     paddingVertical: theme.size.baseMargin,
-    backgroundColor: theme.colors.primary900,
+    backgroundColor: theme.colors.gray300,
   },
 });
