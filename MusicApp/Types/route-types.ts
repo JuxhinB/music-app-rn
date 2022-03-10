@@ -1,3 +1,5 @@
+import {Video} from '.';
+
 export enum Routes {
   Home = 'Home',
   Search = 'Search',
@@ -11,5 +13,13 @@ export type MainNavigatorParams = {
   [Routes.Search]: {};
   [Routes.Categories]: {};
   [Routes.CategoryExtended]: {};
-  [Routes.Details]: {};
+  [Routes.Details]: {
+    itemDetails: Video;
+  };
 };
+
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends MainNavigatorParams {}
+  }
+}

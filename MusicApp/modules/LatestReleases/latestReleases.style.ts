@@ -47,21 +47,31 @@ export const style = StyleSheet.create({
     flex: 1,
 
     width: '100%',
-    height: 80,
+    height: 100,
     borderBottomLeftRadius: theme.size.smallMargin,
     borderBottomRightRadius: theme.size.smallMargin,
   },
-  coverTitle: {
+  info: {
+    paddingLeft: theme.size.smallMargin,
+    paddingRight: theme.size.smallMargin,
+    paddingTop: theme.size.smallMargin / 2,
+    paddingBottom: theme.size.smallMargin / 2,
+
     width: '100%',
 
     position: 'absolute',
     bottom: 0,
     zIndex: 2,
-
-    marginHorizontal: theme.size.smallMargin,
-    marginVertically: theme.size.smallMargin / 2,
-
+  },
+  coverArtist: {
+    fontFamily: theme.font.family.bold,
+    fontSize: theme.font.size.medium,
+    lineHeight: 14,
+    marginBottom: theme.size.smallMargin / 2,
+  },
+  coverTitle: {
     fontFamily: theme.font.family.bold,
     fontSize: theme.font.size.h6,
+    lineHeight: 19,
   },
 });
