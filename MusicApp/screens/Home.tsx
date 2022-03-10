@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text} from 'react-native';
 //
 import global from '../global';
+import modules from '../modules';
 import {Routes, ScreenProps} from '../Types';
 
 interface HomeScreenProps extends ScreenProps<Routes.Home> {}
@@ -9,7 +9,7 @@ interface HomeScreenProps extends ScreenProps<Routes.Home> {}
 function Home({}: HomeScreenProps) {
   return (
     <global.components.Layout>
-      <Text>Home</Text>
+      <modules.LatestReleases />
     </global.components.Layout>
   );
 }

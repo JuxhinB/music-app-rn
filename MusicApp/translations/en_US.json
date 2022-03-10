@@ -6,5 +6,8 @@
     "DetailsScreen": "Song Details",
     "Search": "Search"
   },
-  "general": {}
+  "general": {},
+  "module":{
+    "latest-releases-title": "Latest Releases"
+  }
 }
