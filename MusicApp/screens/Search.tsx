@@ -1,13 +1,16 @@
 import React from 'react';
 import {View} from 'react-native';
+//
+import global from '../global';
+import {Routes, ScreenProps} from '../Types';
 
-type SearchProps = {};
+interface SearchScreenProps extends ScreenProps<Routes.Search> {}
 
-function Search({}: SearchProps) {
+function Search({}: SearchScreenProps) {
   return (
-    <View>
+    <global.components.Layout>
       <View></View>
-    </View>
+    </global.components.Layout>
   );
 }
 

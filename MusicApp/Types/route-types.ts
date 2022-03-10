@@ -3,7 +3,7 @@ export enum Routes {
   Search = 'Search',
   Categories = 'Categories',
   CategoryExtended = 'CategoryExtended',
-  DetailsScreen = 'DetailsScreen',
+  Details = 'Details',
 }
 
 export type MainNavigatorParams = {
@@ -11,5 +11,5 @@ export type MainNavigatorParams = {
   [Routes.Search]: {};
   [Routes.Categories]: {};
   [Routes.CategoryExtended]: {};
-  [Routes.DetailsScreen]: {};
+  [Routes.Details]: {};
 };

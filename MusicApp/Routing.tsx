@@ -104,8 +104,8 @@ function HomeStackNavigator() {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name={Routes.DetailsScreen}
-        component={screens.DetailsScreen}
+        name={Routes.Details}
+        component={screens.Details}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
@@ -121,8 +121,8 @@ function SearchStackNavigator() {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name={Routes.DetailsScreen}
-        component={screens.DetailsScreen}
+        name={Routes.Details}
+        component={screens.Details}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
@@ -143,8 +143,8 @@ function CategoriesStackNavigator() {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name={Routes.DetailsScreen}
-        component={screens.DetailsScreen}
+        name={Routes.Details}
+        component={screens.Details}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

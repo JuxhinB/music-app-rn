@@ -4,10 +4,9 @@ import {View} from 'react-native';
 import global from '../global';
 import {Routes, ScreenProps} from '../Types';
 
-interface CategoryExtendedScreenProps
-  extends ScreenProps<Routes.CategoryExtended> {}
+interface DetailsScreenProps extends ScreenProps<Routes.Details> {}
 
-function CategoryExtended({}: CategoryExtendedScreenProps) {
+function DetailsScreen({}: DetailsScreenProps) {
   return (
     <global.components.Layout>
       <View></View>
@@ -15,4 +14,4 @@ function CategoryExtended({}: CategoryExtendedScreenProps) {
   );
 }
 
-export default CategoryExtended;
+export default DetailsScreen;

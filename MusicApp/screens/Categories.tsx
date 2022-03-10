@@ -1,13 +1,16 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
+//
+import global from '../global';
+import {Routes, ScreenProps} from '../Types';
 
-type Props = {};
+interface CategoriesScreenProps extends ScreenProps<Routes.Categories> {}
 
-function Categories({}: Props) {
+function Categories({}: CategoriesScreenProps) {
   return (
-    <View>
+    <global.components.Layout>
       <Text>categories</Text>
-    </View>
+    </global.components.Layout>
   );
 }
 

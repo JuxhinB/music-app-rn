@@ -1,13 +1,16 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
+//
+import global from '../global';
+import {Routes, ScreenProps} from '../Types';
 
-type PropsProps = {};
+interface HomeScreenProps extends ScreenProps<Routes.Home> {}
 
-function Home({}: PropsProps) {
+function Home({}: HomeScreenProps) {
   return (
-    <View>
+    <global.components.Layout>
       <Text>Home</Text>
-    </View>
+    </global.components.Layout>
   );
 }
 
