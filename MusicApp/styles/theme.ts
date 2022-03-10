@@ -66,14 +66,9 @@ const theme = {
   },
   font: {
     family: {
-      base: '',
-      bold: '',
-      boldItalic: '',
-      emphasis: '',
-      emphasisItalic: '',
-      light: '',
-      italic: '',
-      lightItalic: '',
+      light: 'Nunito-Light',
+      regular: 'Nunito-Regular',
+      bold: 'Nunito-Bold',
     },
     size: {
       h1: 38,
