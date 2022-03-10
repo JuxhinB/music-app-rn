@@ -17,8 +17,8 @@ const App = () => {
   const routeNameRef = useRef();
 
   return (
-    <SafeAreaView style={[general.flex_1]}>
-      <StatusBar barStyle={'dark-content'} />
+    <SafeAreaView style={[general.flex_1, general.bgPrimary900]}>
+      <StatusBar barStyle={'light-content'} />
 
       <NavigationContainer
         ref={containerRef}
