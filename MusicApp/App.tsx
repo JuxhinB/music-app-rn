@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 //
-import Routing from './Routing';
+import Routes from './Routes';
 import styles from './styles';
 import {useAppDispatch} from './store/hooks';
 import {setActiveRouteName} from './store/slices/appStateSlice';
@@ -30,7 +30,7 @@ const App = () => {
           routeNameRef.current = currentRouteName;
           dispatch(setActiveRouteName(currentRouteName));
         }}>
-        <Routing />
+        <Routes />
       </NavigationContainer>
     </SafeAreaView>
   );

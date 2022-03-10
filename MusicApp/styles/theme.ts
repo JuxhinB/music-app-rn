@@ -1,3 +1,5 @@
+import {Platform} from 'react-native';
+
 const theme = {
   colors: {
     gray100: '#F8F8F8',
@@ -94,6 +96,7 @@ const theme = {
     doubleSection: 50,
     horizontalLineHeight: 1,
     buttonRadius: 4,
+    navBarHeight: Platform.OS === 'ios' ? 64 : 54,
     icons: {
       tiny: 15,
       small: 20,

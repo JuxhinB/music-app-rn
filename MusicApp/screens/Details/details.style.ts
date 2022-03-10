@@ -9,7 +9,7 @@ export const style = StyleSheet.create({
     borderRadius: 15,
     overflow: 'hidden',
 
-    shadowColor: '#000',
+    shadowColor: theme.colors.gray900,
     shadowOffset: {
       width: 0,
       height: 2,

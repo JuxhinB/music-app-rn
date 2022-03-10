@@ -7,4 +7,7 @@ export const style = StyleSheet.create({
     paddingVertical: theme.size.baseMargin,
     backgroundColor: theme.colors.gray300,
   },
+  contentContainer: {
+    paddingBottom: theme.size.navBarHeight + theme.size.doubleBaseMargin,
+  },
 });

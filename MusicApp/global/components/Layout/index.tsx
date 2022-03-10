@@ -7,7 +7,13 @@ type LayoutProps = {
 };
 
 function Layout({children}: LayoutProps) {
-  return <ScrollView style={style.container}>{children}</ScrollView>;
+  return (
+    <ScrollView
+      style={style.container}
+      contentContainerStyle={style.contentContainer}>
+      {children}
+    </ScrollView>
+  );
 }
 
 export default Layout;

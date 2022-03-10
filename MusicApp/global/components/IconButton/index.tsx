@@ -9,7 +9,7 @@ interface IconButtonProps extends TouchableOpacityProps {
 function IconButton({children, ...props}: IconButtonProps) {
   return (
     <TouchableOpacity
-      style={Object.assign(style.button, props.style)}
+      style={Object.assign({...style.button}, props.style)}
       {...props}>
       {children}
     </TouchableOpacity>
