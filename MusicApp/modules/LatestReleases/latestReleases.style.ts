@@ -9,6 +9,7 @@ export const style = StyleSheet.create({
     fontFamily: theme.font.family.bold,
     fontSize: theme.font.size.h3,
     marginBottom: theme.size.baseMargin,
+    color: theme.colors.gray600,
   },
   items: {
     flexDirection: 'row',
