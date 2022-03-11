@@ -43,6 +43,19 @@ export const appStateSlice = createSlice({
     setVideos: (state, action: PayloadAction<Video[]>) => {
       state.videos = action.payload;
     },
+    setSelectedGenres: (state, action: PayloadAction<Genre[]>) => {
+      let tempArr: Video[] = [];
+      action.payload.map(genre => {
+        state.videos.map(video => {
+          if (genre.id === video.genre_id) {
+            tempArr.push(video);
+          }
+        });
+      });
+
+      state.selectedVideos = tempArr;
+      state.selectedGenres = action.payload;
+    },
     setGenres: (state, action: PayloadAction<Genre[]>) => {
       state.genres = action.payload;
     },
@@ -61,6 +74,7 @@ export const {
   resetAll,
   setLoading,
   setVideos,
+  setSelectedGenres,
   setGenres,
   setError,
   setReload,

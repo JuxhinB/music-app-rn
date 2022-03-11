@@ -10,7 +10,7 @@ export const style = StyleSheet.create({
     color: theme.colors.gray600,
   },
   item: {
-    backgroundColor: theme.colors.gray400,
+    backgroundColor: `${theme.colors.gray400}50`,
 
     padding: theme.size.smallMargin,
     marginTop: theme.size.smallMargin,
@@ -21,6 +21,6 @@ export const style = StyleSheet.create({
   },
   itemText: {
     fontSize: theme.font.size.h6,
-    color: theme.colors.gray700,
+    color: theme.colors.gray800,
   },
 });
