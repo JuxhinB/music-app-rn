@@ -6,7 +6,7 @@ export const style = StyleSheet.create({
     margin: theme.size.baseMargin,
 
     fontFamily: theme.font.family.bold,
-    fontSize: theme.font.size.h3,
+    fontSize: theme.font.size.h4,
     color: theme.colors.gray600,
   },
   list: {

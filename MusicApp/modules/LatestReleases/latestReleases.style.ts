@@ -7,7 +7,7 @@ export const style = StyleSheet.create({
   },
   title: {
     fontFamily: theme.font.family.bold,
-    fontSize: theme.font.size.h3,
+    fontSize: theme.font.size.h4,
     marginBottom: theme.size.baseMargin,
     color: theme.colors.gray600,
   },

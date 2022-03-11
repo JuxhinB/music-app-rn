@@ -31,6 +31,7 @@ export const style = StyleSheet.create({
   },
   contentReleaseYear: {
     position: 'absolute',
+    width: '100%',
     top: -theme.size.baseMargin,
     color: theme.colors.gray500,
   },
