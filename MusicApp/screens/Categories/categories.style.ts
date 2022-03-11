@@ -21,6 +21,7 @@ export const style = StyleSheet.create({
   },
   itemText: {
     fontSize: theme.font.size.h6,
+    fontFamily: theme.font.family.bold,
     color: theme.colors.gray800,
   },
 });

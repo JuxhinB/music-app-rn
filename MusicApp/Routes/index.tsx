@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {useTranslation} from 'react-i18next';
 import {useNavigation} from '@react-navigation/native';
@@ -24,6 +24,20 @@ export default function Routing() {
   const {t} = useTranslation();
   const {navigate} = useNavigation();
 
+  useEffect(() => {
+    if (routeName === 'Home-nested') {
+      setSelectedTab('home');
+    } else if (routeName === 'Search-nested') {
+      setSelectedTab('search');
+    } else if (routeName === 'Categories-nested') {
+      setSelectedTab('categories');
+    }
+  }, [routeName]);
+
+  const [selectedTab, setSelectedTab] = useState<
+    'home' | 'search' | 'categories'
+  >('home');
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -36,12 +50,13 @@ export default function Routing() {
               style={style.icon}
               onPress={() => {
                 navigate({name: Routes.Home, params: {}});
+                setSelectedTab('home');
               }}>
               <MCIcon
                 name="home"
                 size={25}
                 color={`${
-                  routeName.includes(Routes.Home)
+                  selectedTab === 'home'
                     ? theme.colors.gray400
                     : theme.colors.primary500
                 }`}
@@ -51,12 +66,13 @@ export default function Routing() {
               style={style.icon}
               onPress={() => {
                 navigate({name: Routes.Search, params: {}});
+                setSelectedTab('search');
               }}>
               <MIcon
                 name="search"
                 size={25}
                 color={`${
-                  routeName.includes(Routes.Search)
+                  selectedTab === 'search'
                     ? theme.colors.primary200
                     : theme.colors.primary500
                 }`}
@@ -66,12 +82,13 @@ export default function Routing() {
               style={style.icon}
               onPress={() => {
                 navigate({name: Routes.Categories, params: {}});
+                setSelectedTab('categories');
               }}>
               <MCIcon
                 name="format-list-bulleted"
                 size={25}
                 color={`${
-                  routeName.includes(Routes.Categories)
+                  selectedTab === 'categories'
                     ? theme.colors.primary200
                     : theme.colors.primary500
                 }`}

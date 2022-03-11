@@ -69,10 +69,12 @@ export const style = StyleSheet.create({
     fontSize: theme.font.size.medium,
     lineHeight: 14,
     marginBottom: theme.size.smallMargin / 2,
+    color: theme.colors.gray300,
   },
   coverTitle: {
     fontFamily: theme.font.family.bold,
     fontSize: theme.font.size.h6,
     lineHeight: 19,
+    color: theme.colors.gray300,
   },
 });

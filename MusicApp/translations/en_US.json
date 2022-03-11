@@ -13,6 +13,9 @@
   "screens": {
     "categories": {
       "section-label": "Categories"
+    },
+    "search":{
+      "input-placeholder": "Search by author or song name"
     }
   }
 }

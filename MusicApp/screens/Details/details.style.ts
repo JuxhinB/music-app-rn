@@ -33,15 +33,15 @@ export const style = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     top: -theme.size.baseMargin,
-    color: theme.colors.gray500,
+    color: theme.colors.gray600,
   },
   contentArtist: {
-    color: theme.colors.gray500,
+    color: theme.colors.gray700,
     fontSize: theme.font.size.h6,
     fontFamily: theme.font.family.bold,
   },
   contentTitle: {
-    color: theme.colors.gray600,
+    color: theme.colors.gray800,
     fontSize: theme.font.size.h4,
   },
 });

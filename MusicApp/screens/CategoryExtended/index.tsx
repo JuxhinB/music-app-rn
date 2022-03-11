@@ -5,7 +5,7 @@ import {useNavigation} from '@react-navigation/native';
 import global from '../../global';
 import {useAppDispatch, useAppSelector} from '../../store/hooks';
 import {
-  selectSelectedVideos,
+  selectVideosByGenre,
   setSelectedGenres,
 } from '../../store/slices/videosSlice';
 import {Routes, ScreenProps, Video} from '../../Types';
@@ -16,10 +16,9 @@ interface CategoryExtendedScreenProps
 
 function CategoryExtended({route}: CategoryExtendedScreenProps) {
   const {itemDetails} = route.params;
-  const {navigate} = useNavigation();
 
   const dispatch = useAppDispatch();
-  const videos = useAppSelector(selectSelectedVideos);
+  const videos = useAppSelector(selectVideosByGenre);
 
   useEffect(() => {
     if (itemDetails) {
@@ -27,7 +26,31 @@ function CategoryExtended({route}: CategoryExtendedScreenProps) {
     }
   }, [itemDetails, dispatch]);
 
-  const renderItem = ({item}: {item: Video}) => (
+  const renderItem = ({item}: {item: Video}) => <ListItem item={item} />;
+
+  return (
+    <global.components.StaticLayout>
+      <>
+        <global.components.Text style={style.title}>
+          {itemDetails.name}
+        </global.components.Text>
+        <FlatList
+          contentContainerStyle={style.contentContainer}
+          style={style.list}
+          data={videos}
+          renderItem={renderItem}
+          keyExtractor={item => `${item.id}`}
+        />
+      </>
+    </global.components.StaticLayout>
+  );
+}
+
+export default CategoryExtended;
+
+export function ListItem({item}: {item: Video}) {
+  const {navigate} = useNavigation();
+  return (
     <global.components.Touchable
       style={style.itemWrap}
       onPress={() => {
@@ -52,23 +75,4 @@ function CategoryExtended({route}: CategoryExtendedScreenProps) {
       </>
     </global.components.Touchable>
   );
-
-  return (
-    <global.components.StaticLayout>
-      <>
-        <global.components.Text style={style.title}>
-          {itemDetails.name}
-        </global.components.Text>
-        <FlatList
-          contentContainerStyle={style.contentContainer}
-          style={style.list}
-          data={videos}
-          renderItem={renderItem}
-          keyExtractor={item => `${item.id}`}
-        />
-      </>
-    </global.components.StaticLayout>
-  );
 }
-
-export default CategoryExtended;

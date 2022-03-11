@@ -8,7 +8,8 @@ export interface VideosProps {
   genres: Genre[];
   selectedGenres: Genre[];
   videos: Video[];
-  selectedVideos: Video[];
+  videosByGenre: Video[];
+  videosBySearch: Video[];
   error: AxiosError | null;
   reload: boolean;
 }
@@ -18,7 +19,8 @@ const initialState: VideosProps = {
   genres: [],
   selectedGenres: [],
   videos: [],
-  selectedVideos: [],
+  videosByGenre: [],
+  videosBySearch: [],
   error: null,
   reload: false,
 };
@@ -27,20 +29,21 @@ export const appStateSlice = createSlice({
   name: 'videos',
   initialState,
   reducers: {
-    resetSelectedVideos: state => {
-      state.selectedVideos = state.videos;
+    resetvideosByGenre: state => {
+      state.videosByGenre = state.videos;
     },
     resetSelectedGenres: state => {
       state.selectedGenres = state.genres;
     },
     resetAll: state => {
-      state.selectedVideos = [];
+      state.videosByGenre = [];
       state.selectedGenres = [];
     },
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
     setVideos: (state, action: PayloadAction<Video[]>) => {
+      state.videosBySearch = action.payload;
       state.videos = action.payload;
     },
     setSelectedGenres: (state, action: PayloadAction<Genre[]>) => {
@@ -53,8 +56,27 @@ export const appStateSlice = createSlice({
         });
       });
 
-      state.selectedVideos = tempArr;
+      state.videosByGenre = tempArr;
       state.selectedGenres = action.payload;
+    },
+    setVideosBySearch: (state, action: PayloadAction<string>) => {
+      let tempArr: Video[] = [];
+      if (action.payload) {
+        state.videos.map(video => {
+          if (
+            `${video.title}`
+              .concat(video.artist)
+              .toLowerCase()
+              .includes(action.payload.toLowerCase())
+          ) {
+            tempArr.push(video);
+          }
+        });
+      } else {
+        tempArr = state.videos;
+      }
+
+      state.videosBySearch = tempArr;
     },
     setGenres: (state, action: PayloadAction<Genre[]>) => {
       state.genres = action.payload;
@@ -69,12 +91,13 @@ export const appStateSlice = createSlice({
 });
 
 export const {
-  resetSelectedVideos,
+  resetvideosByGenre,
   resetSelectedGenres,
   resetAll,
   setLoading,
   setVideos,
   setSelectedGenres,
+  setVideosBySearch,
   setGenres,
   setError,
   setReload,
@@ -87,8 +110,11 @@ export const selectSelectedGenres = (state: RootState) =>
 
 export const selectVideos = (state: RootState) => state.videos.videos;
 
-export const selectSelectedVideos = (state: RootState) =>
-  state.videos.selectedVideos;
+export const selectVideosByGenre = (state: RootState) =>
+  state.videos.videosByGenre;
+
+export const selectVideosBySearch = (state: RootState) =>
+  state.videos.videosBySearch;
 
 export const selectError = (state: RootState) => state.videos.error;
 

@@ -1,14 +1,14 @@
 import React from 'react';
 //
-import global from '../global';
-import modules from '../modules';
-import {useAppDispatch, useAppSelector} from '../store/hooks';
+import global from '../../global';
+import modules from '../../modules';
+import {useAppDispatch, useAppSelector} from '../../store/hooks';
 import {
   selectReload,
   selectVideos,
   setReload,
-} from '../store/slices/videosSlice';
-import {Routes, ScreenProps} from '../Types';
+} from '../../store/slices/videosSlice';
+import {Routes, ScreenProps} from '../../Types';
 
 interface HomeScreenProps extends ScreenProps<Routes.Home> {}
 
