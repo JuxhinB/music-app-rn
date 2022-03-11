@@ -1,4 +1,4 @@
-import {Video} from '.';
+import {Genre, Video} from '.';
 
 export enum Routes {
   Home = 'Home',
@@ -12,7 +12,9 @@ export type MainNavigatorParams = {
   [Routes.Home]: {};
   [Routes.Search]: {};
   [Routes.Categories]: {};
-  [Routes.CategoryExtended]: {};
+  [Routes.CategoryExtended]: {
+    itemDetails: Genre;
+  };
   [Routes.Details]: {
     itemDetails: Video;
   };

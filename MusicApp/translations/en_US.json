@@ -7,7 +7,12 @@
     "Search": "Search"
   },
   "general": {},
-  "module":{
+  "module": {
     "latest-releases-title": "Latest Releases"
+  },
+  "screens": {
+    "categories": {
+      "section-label": "Categories"
+    }
   }
 }
